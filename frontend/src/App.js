@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from "react";
 import Web3 from "web3";
 import { CONTRACT_ADDRESS, ABI } from "./config";

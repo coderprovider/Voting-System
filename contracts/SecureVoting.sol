@@ -5,20 +5,20 @@ contract SecureVoting {
     address public admin;
 
     struct Proposal {
-        string description; // Description of the proposal
-        uint256 voteCount; // Number of votes received
-        bool exists; // Boolean flag to check if the proposal exists
+        string description; 
+        uint256 voteCount; 
+        bool exists; 
     }
 
     struct Voter {
-        bool isRegistered; // Boolean flag to check if the voter is registered
-        bool hasVoted; // Boolean flag to check if the voter has already voted
-        uint256 vote; // Index of the proposal that the voter has voted for
+        bool isRegistered;
+        bool hasVoted; 
+        uint256 vote;
     }
 
     Proposal[] public proposals;
 
-    mapping(address => Voter) public voters; // store voters by their address
+    mapping(address => Voter) public voters; 
 
     event ProposalCreated(uint256 indexed proposalId, string description);
 

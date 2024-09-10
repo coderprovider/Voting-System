@@ -1,4 +1,3 @@
-// Import necessary modules from Hardhat
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
@@ -10,11 +9,10 @@ describe("SecureVoting", function () {
     let voter2;
 
     before(async function () {
-      SecureVoting = await ethers.getContractFactory("SecureVoting");
-      [admin, voter1, voter2] = await ethers.getSigners();
-      secureVoting = await SecureVoting.deploy();
-      // await secureVoting.deployed(); 
-  });
+        SecureVoting = await ethers.getContractFactory("SecureVoting");
+        [admin, voter1, voter2] = await ethers.getSigners();
+        secureVoting = await SecureVoting.deploy();
+    });
 
     it("Should allow admin to create a proposal", async function () {
         await secureVoting.connect(admin).createProposal("Sample Proposal 1");
